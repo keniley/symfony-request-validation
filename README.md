@@ -2,14 +2,14 @@
 
 This package extends the standard symfony request class with several features, especially validation directly in the request.
 
-### Installation
+## Installation
 
 Install the package via composer:
 ```shell
 $ composer require keniley/symfony-request-validation
 ```
 
-### Add to services
+## Add to services
 
 ```yaml
 #config/services.yaml
@@ -19,7 +19,7 @@ services:
         arguments: ['@Symfony\Component\HttpFoundation\RequestStack']
 ```
 
-### Basic using
+## Basic using
 
 Change in your controller request class
 
@@ -37,9 +37,9 @@ class SomeController extends Controller
 }
 ```
 
-### New methods
+## New methods
 
-##### Get all input data from request.
+### Get all input data from request.
 Get data from query, request, file and JSON body.
 
 ```php
@@ -49,7 +49,7 @@ public function someMethod(Request $request)
 }
 ```
 
-##### Get a subset containing the provided keys with values from the input data.
+### Get a subset containing the provided keys with values from the input data.
 If key does not exist return null as value.
 
 ```php
@@ -61,7 +61,7 @@ public function someMethod(Request $request)
 }
 ```
 
-#####  Get all of the input except for a specified array of items.
+###  Get all of the input except for a specified array of items.
 
 ```php
 public function someMethod(Request $request)
@@ -72,7 +72,7 @@ public function someMethod(Request $request)
 }
 ```
 
-#####  Determine if the request contains a given input item key. 
+###  Determine if the request contains a given input item key. 
 If you enter multiple keys, they must contain all of them.
 
 ```php
@@ -84,7 +84,7 @@ public function someMethod(Request $request)
 }
 ```
 
-#####  Determine if the current request is asking for JSON in return.
+###  Determine if the current request is asking for JSON in return.
 Determine by Accept header in request
 
 ```php
@@ -94,7 +94,7 @@ public function someMethod(Request $request)
 }
 ```
 
-#####  Determine if the request is sending JSON.
+###  Determine if the request is sending JSON.
 Determine by Content-Type header in request
 
 ```php
@@ -104,7 +104,7 @@ public function isJson(Request $request)
 }
 ```
 
-### Original request
+## Original request
 
 Of course you have all the standard methods and features of the original request.
 
@@ -115,7 +115,7 @@ public function isJson(Request $request)
 }
 ```
 
-### Validation in controller
+## Validation in controller
 
 You must first create a set of validation rules and then call the validate() method
 
@@ -144,11 +144,11 @@ class SomeController extends Controller
 }
 ```
 
-### Validation in separate class
+## Validation in separate class
 
 You can create a new class that inherits from the Keniley\RequestValidation\Request
 
-Create new request class:
+### Create new request class:
 
 ```php
 namespace App\Request;
@@ -169,7 +169,7 @@ class UserUpdateRequest extends Request
 }
 ```
 
-Using in controller:
+### Using in controller:
 
 ```php
 namespace App\Controller;
@@ -190,9 +190,9 @@ class SomeController extends Controller
 }
 ```
 
-### Usefull methods for validation
+## Usefull methods for validation
 
-#####  Determine if the request is valid
+###  Determine if the request is valid
 
 ```php
 public function someMethod(Request $request)
@@ -201,7 +201,7 @@ public function someMethod(Request $request)
 }
 ```
 
-##### Get validation errors from validator
+### Get validation errors from validator
 
 ```php
 public function someMethod(Request $request)
