@@ -98,9 +98,9 @@ public function someMethod(Request $request)
 Determine by Content-Type header in request
 
 ```php
-public function isJson(Request $request)
+public function someMethod(Request $request)
 {
-    $json = $request->wantsJson(); // output bool
+    $json = $request->isJson(); // output bool
 }
 ```
 
@@ -109,7 +109,7 @@ public function isJson(Request $request)
 Of course you have all the standard methods and features of the original request.
 
 ```php
-public function isJson(Request $request)
+public function someMethod(Request $request)
 {
     $contentType = $request->getContentType();
 }
